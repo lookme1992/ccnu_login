@@ -19,6 +19,7 @@ def login():
         "_eventId": "submit",
         "submit": "登录"
     }
+    #res = s.post("https://vpn.ccnu.edu.cn/", data=data)
     res = s.post("https://account.ccnu.edu.cn/cas/login;jsessionid=" + s.cookies['JSESSIONID'], data=data)
     if '登录成功' in res.text:
         s.get('http://one.ccnu.edu.cn/')
